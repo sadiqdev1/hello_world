@@ -1,7 +1,9 @@
 FROM php:8.2-apache
 
-# Copy all files to web directory
-COPY . /var/www/html/
+# Copy files
+COPY index.php /var/www/html/
 
-# Expose port 80
+# Set proper permissions
+RUN chmod -R 755 /var/www/html/
+
 EXPOSE 80
